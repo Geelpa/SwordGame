@@ -23,6 +23,7 @@ function reset() {
 
   sword.damage = 10
   sword.critical = 5
+  sword.criticalDamage = 2.0
   sword.durability = 100
   sword.sharpness = 2
 
@@ -124,7 +125,7 @@ function upgradeDamage() {
 function upgradeCritical() {
   if (balance.gold >= 25) {
     if (sword.critical == 100) {
-      sword.criticalDamage = (sword.criticalDamage + 0.1)
+      sword.criticalDamage = Number(Math.round(sword.criticalDamage + 0.1)).toFixed(2)
     } else {
       sword.critical++
     }
